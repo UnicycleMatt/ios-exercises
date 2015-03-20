@@ -38,8 +38,8 @@
     NSMutableArray *characterCopyArray = [characterArray mutableCopy];
     NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf'"];
     [characterCopyArray filterUsingPredicate:containsWorf];
-        
-    if (characterCopyArray) {
+    
+    if (characterCopyArray.count >= 1) {
         return YES;
     } else {
         return NO;
