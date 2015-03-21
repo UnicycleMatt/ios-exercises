@@ -34,17 +34,6 @@
 }
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
-
-//    NSNumber *lowestNumber = [arrayOfNumbers objectAtIndex:0];
-//    
-//    for (NSNumber *numb in arrayOfNumbers) {
-//        if ([numb integerValue] < [lowestNumber integerValue]) {
-//            lowestNumber = numb;
-//        }
-//    }
-//
-//    NSInteger lowestInteger = [lowestNumber integerValue];
-//    return lowestInteger;
     
     NSNumber *minNumber = [arrayOfNumbers valueForKeyPath:@"@min.self"];
     return [minNumber integerValue];
