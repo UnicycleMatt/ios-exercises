@@ -29,24 +29,25 @@
         [arrayOfNumbersMutable addObject:[NSNumber numberWithInteger: number]];
         number++;
     }
-
-    NSArray *arrayOfNumbers = [[NSArray alloc] initWithArray:arrayOfNumbersMutable];
     
-    return arrayOfNumbers;
+    return arrayOfNumbersMutable;
 }
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
 
-    NSNumber *lowestNumber = [arrayOfNumbers objectAtIndex:0];
+//    NSNumber *lowestNumber = [arrayOfNumbers objectAtIndex:0];
+//    
+//    for (NSNumber *numb in arrayOfNumbers) {
+//        if ([numb integerValue] < [lowestNumber integerValue]) {
+//            lowestNumber = numb;
+//        }
+//    }
+//
+//    NSInteger lowestInteger = [lowestNumber integerValue];
+//    return lowestInteger;
     
-    for (NSNumber *numb in arrayOfNumbers) {
-        if ([numb integerValue] < [lowestNumber integerValue]) {
-            lowestNumber = numb;
-        }
-    }
-
-    NSInteger lowestInteger = [lowestNumber integerValue];
-    return lowestInteger;
+    NSNumber *minNumber = [arrayOfNumbers valueForKeyPath:@"@min.self"];
+    return [minNumber integerValue];
 }
 
 @end
